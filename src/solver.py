@@ -32,7 +32,7 @@ class LongestPathSolver:
         # 現在のパスが最長か確認
         if total_distance > self.best_distance:
             self.best_distance = total_distance
-            self.best_path = path.copy()
+            self.best_path = path[:]  # 深いコピー
 
         # 隣接頂点を探索
         for neighbor, weight in self.graph.get_neighbors(current):

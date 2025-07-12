@@ -16,6 +16,10 @@ def parse_input():
             if not line:
                 continue
 
+            # 空行で終了
+            if line.lower() in ['end', 'quit', 'exit']:
+                break
+
             # 正規表現でパース（ホワイトスペースを考慮）
             pattern = r'^\s*(\d+)\s*,\s*(\d+)\s*,\s*([\d.]+)\s*$'
             match = re.match(pattern, line)

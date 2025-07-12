@@ -26,6 +26,10 @@ class SimpleLongestPathSolver:
             if distance > max_distance:
                 max_distance = distance
                 longest_path = path.copy()
+            elif distance == max_distance and path:
+                # 同じ距離の場合、辞書順で最小のパスを選択
+                if not longest_path or path < longest_path:
+                    longest_path = path.copy()
 
         return longest_path, max_distance
 

@@ -16,7 +16,9 @@ class Graph:
 
     def get_neighbors(self, vertex):
         """指定した頂点の隣接頂点とその重みを取得"""
-        return self.edges[vertex]
+        # 安定した順序のため、頂点IDでソート
+        neighbors = self.edges[vertex]
+        return sorted(neighbors, key=lambda x: x[0])
 
     def get_all_vertices(self):
         """全頂点の取得"""

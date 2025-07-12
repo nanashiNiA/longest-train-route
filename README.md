@@ -47,11 +47,15 @@ python src/simple_main.py
 # ファイルからの入力
 python src/simple_main.py < tests/sample_inputs/example1.txt
 
+# 手動入力の場合
+python src/simple_main.py
+# データを入力後、'end' または Ctrl+Z (Windows) / Ctrl+D (Linux) で終了
+
 # シンプル版のテスト
 python -m pytest tests/test_simple_solver.py -v
 ```
 
-#### 高度版（追加実装）
+#### 高度版（私的追加実装）
 ```bash
 # 基本実行（標準入力から読み込み）
 python src/main.py
