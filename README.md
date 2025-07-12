@@ -100,7 +100,7 @@ longest-train-route/
 - エッジケース（空入力、不正フォーマット）
 
 ## 作成者
-[Your Name]
+由井　拓翔
 
 ## ライセンス
 MIT License
