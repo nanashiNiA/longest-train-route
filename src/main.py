@@ -37,7 +37,7 @@ def parse_input():
 def format_output(path):
     """結果を指定フォーマットで出力"""
     for vertex in path:
-        print(vertex)
+        print(vertex, end='\r\n')
 
 def progress_callback(message):
     """進捗表示用コールバック"""

@@ -34,11 +34,25 @@
 - 標準ライブラリのみ使用（外部依存なし）
 
 ### インストール・実行
+
+#### 基本版（推奨：採用試験用）
 ```bash
 # リポジトリのクローン
 git clone <repository-url>
 cd longest-train-route
 
+# シンプル版実行（標準入力から読み込み）
+python src/simple_main.py
+
+# ファイルからの入力
+python src/simple_main.py < tests/sample_inputs/example1.txt
+
+# シンプル版のテスト
+python -m pytest tests/test_simple_solver.py -v
+```
+
+#### 高度版（追加実装）
+```bash
 # 基本実行（標準入力から読み込み）
 python src/main.py
 
@@ -62,18 +76,28 @@ python tests/benchmark_solvers.py
 
 ## ソルバーの種類
 
-### 1. Original Solver (original)
+### 基本版（推奨：採用試験用）
+
+#### Simple Solver (simple_main.py)
+- 基本的な深さ優先探索
+- シンプルで確実な実装
+- 採用試験の要求を満たす最小限の実装
+- 出力フォーマット: `\r\n`改行コード対応
+
+### 高度版（追加実装）
+
+#### 1. Original Solver (original)
 - 基本的な深さ優先探索
 - 小規模グラフ（頂点数 ≤ 4）に最適
 - シンプルで確実な実装
 
-### 2. Parallel Solver (parallel)
+#### 2. Parallel Solver (parallel)
 - 並列処理による高速化
 - 中〜大規模グラフ（頂点数 > 4）に最適
 - 複数の始点から同時に探索
 - 進捗表示機能付き
 
-### 3. Advanced Solver (advanced)
+#### 3. Advanced Solver (advanced)
 - グラフ特性に基づく戦略選択
 - 完全グラフ: 貪欲法による近似
 - 疎グラフ: 連結成分ごとの探索
@@ -111,12 +135,15 @@ longest-train-route/
 ├── requirements.txt       # 依存関係（空）
 ├── difficult_test_cases.txt  # 難しいテストケース定義
 ├── src/
-│   ├── main.py           # メインエントリーポイント
+│   ├── simple_main.py    # 基本版メインエントリーポイント（推奨）
+│   ├── simple_solver.py  # 基本版ソルバー
+│   ├── main.py           # 高度版メインエントリーポイント
 │   ├── graph.py          # グラフデータ構造
 │   ├── solver.py         # 基本最長パス探索アルゴリズム
 │   └── parallel_solver.py # 並列処理・高度最適化ソルバー
 ├── tests/
-│   ├── test_solver.py    # ユニットテスト
+│   ├── test_simple_solver.py # 基本版ユニットテスト
+│   ├── test_solver.py    # 高度版ユニットテスト
 │   ├── benchmark_solvers.py # 性能ベンチマーク
 │   └── sample_inputs/    # テスト用入力ファイル
 │       ├── example1.txt
