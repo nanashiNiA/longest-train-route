@@ -1,3 +1,5 @@
+import sys
+
 class LongestPathSolver:
     """最長パス問題のソルバー"""
 
