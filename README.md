@@ -38,7 +38,7 @@
 #### 基本版（推奨：採用試験用）
 ```bash
 # リポジトリのクローン
-git clone <repository-url>
+git clone https://github.com/nanashiNiA/longest-train-route.git
 cd longest-train-route
 
 # シンプル版実行（標準入力から読み込み）
