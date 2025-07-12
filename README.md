@@ -171,7 +171,7 @@ $ Get-Content input.txt | python src/simple_main.py
 4
 ```
 
-#### 高度版（今回の課題に該当なしのため独自追加になります。）
+#### 高度版（⚠️今回の課題に該当なしのため独自追加になります。）
 ```bash
 # 基本実行（標準入力から読み込み）
 python src/main.py
